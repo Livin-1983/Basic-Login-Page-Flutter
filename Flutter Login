@@ -1,0 +1,122 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(MaterialApp(
+      home: Home(),
+    ));
+
+class Home extends StatelessWidget {
+  const Home({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('STUDENTS LOGIN'),
+        centerTitle: true,
+        backgroundColor: Colors.blue,
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right: 10.0),
+            child: Icon(
+              Icons.search,
+              size: 28.0,
+              color: Colors.black38,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(right: 10.0),
+            child: PopupMenuButton(
+              itemBuilder: (context) => [
+                PopupMenuItem(
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.offline_bolt,
+                        color: Colors.black12,
+                      ),
+                      Text('Profile'),
+                    ],
+                  ),
+                ),
+                PopupMenuItem(
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.offline_bolt,
+                        color: Colors.black12,
+                      ),
+                      Text('Calender'),
+                    ],
+                  ),
+                ),
+                PopupMenuItem(
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.offline_bolt,
+                        color: Colors.black12,
+                      ),
+                      Text('Settings'),
+                    ],
+                  ),
+                ),
+                PopupMenuItem(
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.offline_bolt,
+                        color: Colors.black12,
+                      ),
+                      Text('Logout'),
+                    ],
+                  ),
+                ),
+              ],
+              child: Icon(
+                Icons.more_vert,
+                size: 28.0,
+                color: Colors.black87,
+              ),
+            ),
+          ),
+        ],
+      ),
+      body: Center(
+          child: Column(
+        children: [
+          TextField(
+            decoration: InputDecoration(
+                hintText: 'Your Roll Number',
+                labelText: "Roll Number",
+                hintStyle: TextStyle(
+                  fontSize: 15.0,
+                  color: Colors.black26,
+                ),
+                labelStyle: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.black,
+                )),
+            keyboardType: TextInputType.emailAddress,
+            maxLength: 6,
+          ),
+          TextField(
+            decoration: InputDecoration(
+                labelText: "Password",
+                labelStyle: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.black,
+                )),
+            keyboardType: TextInputType.number,
+            obscureText: true,
+            maxLength: 8,
+          )
+        ],
+      )),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: Text('About'),
+          backgroundColor: Colors.blue,
+          foregroundColor: Colors.white,
+          shape: CircleBorder()),
+    );
+  }
+}
